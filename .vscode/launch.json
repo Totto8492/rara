@@ -1,0 +1,26 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "probe-rs-debug",
+            "request": "launch",
+            "preLaunchTask": "rust: cargo build",
+            "name": "probe-rs Test",
+            "cwd": "${workspaceFolder}",
+            "chip": "rp2040",
+            "flashingConfig": {
+                "flashingEnabled": true,
+            },
+            "coreConfigs": [
+                {
+                    "coreIndex": 0,
+                    "programBinary": "target/thumbv6m-none-eabi/debug/${workspaceFolderBasename}",
+                    "rttEnabled": true
+                }
+            ]
+        }
+    ]
+}
